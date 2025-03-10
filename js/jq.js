@@ -119,3 +119,47 @@ function redirigirAutomaticamente(url, tiempo) {
 }
 
 
+/*VALIDACIÓN FORM AÑADIR HOGAR MANUAL*/
+
+$(function() {
+    // Validación del campo cuando el valor es inválido
+    $("#add_home").submit(function(e) {
+        e.preventDefault(); // Evitar el envío del formulario
+
+        let isValid = true;
+        let userInput = $("#add_code").val().trim();
+
+        // Regex para validar el formato "1234-56789-1234-XXX"
+        let regex = /^\d{4}-\d{5}-\d{4}-[A-Za-z]{3}$/;
+
+        if (!regex.test(userInput)) {
+            $(".input-txt").addClass("error");
+
+            // Animación del placeholder
+            $("#add_code").fadeOut(100, function() {
+                $(this).val("").attr("placeholder", "El código no es válido").fadeIn(300);
+            });
+
+            // Animar cambio de color del SVG a rojo
+            $("#add_code + span svg path").css("transition", "fill 0.3s ease").css("fill", "#AE1916");
+
+            isValid = false;
+        } else {
+            $(".input-txt").removeClass("error");
+
+            // Animación para restaurar el placeholder
+            $("#add_code").fadeOut(100, function() {
+                $(this).attr("placeholder", "1234-56789-1234-XXX").fadeIn(300);
+            });
+
+            // Restaurar el color del SVG a azul
+            $("#add_code + span svg path").css("transition", "fill 0.3s ease").css("fill", "#01222F");
+        }
+
+        // Si es válido, redirigir
+        if (isValid) {
+                window.location.href = "add_home_successful.html"; // Redirigir después de la validación
+        }
+    });
+});
+

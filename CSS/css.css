@@ -317,8 +317,8 @@ footer div.footer-contact-us{
     left: 0;
     width: 100vw;
     height: 100vh;
-    opacity: 0; /* Inicialmente invisible */
-    pointer-events: none; /* Evita que se pueda interactuar mientras está oculto */
+    opacity: 0; 
+    pointer-events: none; 
     transition: opacity 0.3s ease-in-out;
     z-index: 1000;
     height: 100vh;
@@ -328,7 +328,7 @@ footer div.footer-contact-us{
 
 div#contenedor-menu.active {
     opacity: 1;
-    pointer-events: auto; /* Permite interacción cuando está visible */
+    pointer-events: auto; 
 }
 
 header.menu{
@@ -512,10 +512,30 @@ main form p {
     font-size: 0.875rem;
   }
 
-  /*   - PROPERTIES - */
+  /*---------------- SUCCESS ----------------*/
+
+  main.success div:nth-child(3){
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  main.success * p:nth-child(2){
+    text-align: center;
+    margin-top: 0.8rem;
+    font-size: 1.56rem;
+    width: 80%;
+  }
+
+  main.success * p:nth-child(3){
+    font-size: 0.875rem;
+    margin-top: 0.8rem;
+  }
+
+  /*---------------- PROPERTIES / LISTADO DE PROPIEDADES ----------------*/
 
   /*header*/
-  header.properties {
+header.properties {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -584,20 +604,20 @@ section#property-list{
 }
 .imagen-property {
     flex-basis:100%; 
-    background-image: url('../images/photos/HOME_EXAMPLE.webp'); /* 🖼️ Cambia esto por la imagen real */
+    background-image: url('../images/photos/HOME_EXAMPLE.webp'); 
     background-size: cover;
     background-position: center;
     display: flex;
 }
 
 .fondo-2 {
-    background-image: url('../images/photos/jeff_opinion.webp'); /* 🖼️ Cambia esto por la imagen real */
+    background-image: url('../images/photos/jeff_opinion.webp'); 
     background-size: cover;
     background-position: center;
 }
 
 .fondo-3 {
-    background-image: url('../images/photos/jessica_opinion.webp'); /* 🖼️ Cambia esto por la imagen real */
+    background-image: url('../images/photos/jessica_opinion.webp'); 
     background-size: cover;
     background-position: center;
 }
@@ -642,7 +662,6 @@ div.imagen-property> div div.iconos {
     border: 1px solid #DBAC29
 }
 
-/* 📌 Información de la propiedad */
 .info-propiedad {
     background-color: rgba(1, 34, 47, 0.68);
     display: flex;
@@ -660,4 +679,132 @@ div.imagen-property> div div.iconos {
 .descripcion {
     font-size: 14px;
     color: #D9D9D9;
+}
+
+/*---------------- USER OPTIONS ----------------*/
+
+main.user_options div.header-dummy{
+    height: 3.5rem;
+}
+
+main.user_options div:nth-child(3){
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  main.user_options div:nth-child(3) div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    width:12rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  main.user_options div:nth-child(3) picture>img{
+    border-radius: 50%;
+    height: 13rem;
+  }
+
+  main.user_options * p:nth-child(2){
+    margin-top: 1rem;
+    font-size: 1.125rem;
+  }
+/*Opciones*/
+div#opciones{
+    display: flex;
+    flex-flow: column;
+    gap:1rem;
+    width: 90%;
+}
+a.input-txt{
+    display: flex;
+    flex-basis: 100%;
+}
+a.input-txt>*{
+    height: 3rem;
+}
+a.input-txt div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #01222F;
+    padding-left: 1rem;
+    flex-basis: 80%;
+}
+a.input-txt div:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C8BA9B;
+    flex-basis: 20%;
+}
+
+main.user_options button{
+    background-color:#C8BA9B ;
+    color: #01222F;
+}
+
+main.user_options button:hover{
+    background-color:#01222F ;
+    color: #C8BA9B;
+}
+
+  /*---------------- AÑADIR HOGAR ----------------*/
+
+main.add_house div.qr_code,main.add_house div.code {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+main.add_house div.qr_code div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+    width:20rem;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+main.add_house div.qr_code div:nth-child(1) img{
+    display: flex;
+    height: 40rem;
+    width:20rem;
+    margin-top: 5rem;
+    overflow: hidden;
+}
+
+main.add_house div.qr_code p,main.add_house div.code span.text {
+    text-align: center;
+    font-size:13px;
+    width:80% ;
+}
+
+
+
+main.add_house button#registrar{
+    background-color:#01222F ;
+    color: #C8BA9B;
+}
+
+main.add_house button#registar:hover{
+    background-color:#C8BA9B ;
+    color: #01222F;
+}
+
+main.add_house button#manual{
+    background-color:#C8BA9B ;
+    color: #01222F;
+}
+
+main.add_house button#manual:hover{
+    background-color:#01222F ;
+    color: #C8BA9B;
 }
