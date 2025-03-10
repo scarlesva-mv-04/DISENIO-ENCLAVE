@@ -163,3 +163,34 @@ $(function() {
     });
 });
 
+
+/*ABOUT US - MENU DROPDOWN (SE ENCUENTRA EN POR QUE CONFIAR EN NOSOTROS)*/
+$(document).ready(function() {
+    $('.dropdown-btn').click(function() {
+      var dropdown = $(this).closest('article'); // Get the closest parent article
+      var dropdownContent = dropdown.find('.dropdown-content'); // Get the dropdown content
+      
+      // Toggle the active class for each dropdown
+      if (dropdown.hasClass('active')) {
+        // If active, slide up to close
+        dropdownContent.stop(true, true).animate({ height: '0' }, 300, function() {
+          dropdownContent.hide(); // After the animation, hide the content
+        });
+        dropdown.removeClass('active'); // Remove active class to reset rotation
+      } else {
+        // If not active, slide down to open
+        dropdownContent.show(); // Make sure the content is shown before calculating height
+        var contentHeight = dropdownContent[0].scrollHeight; // Get the natural height of the content
+        dropdownContent.stop(true, true).animate({ height: contentHeight }, 300);
+        dropdown.addClass('active'); // Add active class to trigger rotation
+      }
+    });
+  });
+  
+  
+  
+  
+  
+  
+  
+  
