@@ -76,6 +76,7 @@ body {
     text-align: justify;
 }
 
+/*ESTILOS GENERALES*/
 .normal {
     background-color: #01222F;
     color: #C8BA9B;
@@ -86,7 +87,6 @@ body {
     color: #01222F;
 }
 
-/*ESTILOS GENERALES*/
 /*HEADER*/
 header.default {
     display: flex;
@@ -111,7 +111,7 @@ header.default>.user {
     padding: 0;
 }
 
-/*MAIN*/
+/* -----------------      INDEX      ------------------- */
 div.header-dummy {
     height: 5.5rem;
 }
@@ -182,19 +182,16 @@ section#testimonials{
     flex-basis: 100%;
 }
 
-/* CSS */
 .testimonial-container {
     position: relative;
     color: #fff; 
-    padding: 2rem;          /* Espacio interno adaptable */
-    border-radius: 0.5rem;  /* Curvatura opcional de esquinas */
-    overflow: hidden;       /* Para asegurar que nada se salga del contenedor */
+    padding: 2rem;         
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
   
-  /* Oscurece un poco la imagen de fondo para que el texto sea más legible */
-/* CSS */
 .testimonial-container {
-    border-radius: 15px; /* Opcional, para esquinas redondeadas */
+    border-radius: 15px; 
   }
   
   /* Contenedor interno para el contenido */
@@ -216,19 +213,18 @@ section#testimonials{
     width: 3rem;
     height: 3rem;
     object-fit: cover;
-    border-radius: 50%; /* Para que la foto sea circular */
+    border-radius: 50%; 
   }
   
   .testimonial-author {
 /*responsive*/
   }
-  
-  /* Cita */
+
   .testimonial-quote {
     text-align: center;
     font-size: 1.5rem;
     font-style: italic;
-    margin: 0; /* Quita el margen por defecto de blockquote */
+    margin: 0; 
   }
   
   
@@ -1063,13 +1059,12 @@ h3 {
     color: #2c3e50;
 }
 
-/* Initially hide the dropdown content */
+/* Para que no se vea el contenido del dropdown */
 .dropdown-content {
     display: none;
     overflow: hidden;
     padding: 10px 20px;
     height: 0;
-    /* Set initial height to 0 */
 }
 
 .dropdown-content.f-alternative {
@@ -1078,7 +1073,6 @@ h3 {
 
 .icon svg {
     transition: transform 0.3s ease;
-    /* Smooth transition for rotation */
 }
 
 .dropdown.active .icon svg {
@@ -1135,7 +1129,7 @@ section#our-history>div>span{
 
 
 .calendar {
-    width: 100%; /* Ajusta según sea necesario */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1179,7 +1173,7 @@ section#our-history>div>span{
 }
 
 .selected{
-    background: #C8BA9B; /* #C8BA9B con 50% de opacidad */
+    background: #C8BA9B; 
     color: #01222F;
     font-weight: bold;
 }
@@ -1193,8 +1187,6 @@ section#our-history>div>span{
     gap: 5px;
     color: #D9D9D9;
 }
-
-/* Clase para destacar el día 15 */
 
 /* Clase para los días fuera del mes (opacidad) */
 .day-non-elegible {
@@ -1286,7 +1278,7 @@ section#status>div>div{
     flex-wrap: wrap;
     width:90%;
     align-items: center;
-    justify-content: center;  /* Centrar verticalmente */
+    justify-content: center;
     color: #31812E;
 }
 
