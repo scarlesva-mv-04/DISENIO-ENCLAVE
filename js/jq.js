@@ -166,7 +166,7 @@ $(function() {
 /*ABOUT US - MENU DROPDOWN (SE ENCUENTRA EN POR QUE CONFIAR EN NOSOTROS)*/
 $(document).ready(function() {
     $('.dropdown-btn').click(function() {
-      var dropdown = $(this).closest('article'); // Get the closest parent article
+      var dropdown = $(this).closest('div'); 
       var dropdownContent = dropdown.find('.dropdown-content'); // Get the dropdown content
       
       // Toggle the active class for each dropdown

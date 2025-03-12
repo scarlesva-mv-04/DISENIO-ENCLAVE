@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <style>
@@ -62,7 +62,7 @@
                 <nav>
                     <a href="index.html" class="resaltar encabezado">INICIO</a>
                     <a href="about_us.html" class="resaltar encabezado">SOBRE NOSOSTROS</a>
-                    <a href="index.html" class="resaltar encabezado">TESTIMONIALS</a>
+                    <a href="testimonials.html" class="resaltar encabezado">TESTIMONIALS</a>
                     <a href="cita.html" class="resaltar encabezado">AGENDA UNA CITA</a>
                 </nav>
             </div>
@@ -119,14 +119,14 @@
         </section>
         <section id="rely-on-us">
             <h2 class="subtitles">Nuestros valores</h2>
-            <article id="our-passion" class="dropdown">
+            <div id="our-passion" class="dropdown">
                 <button class="dropdown-btn alternative">
                     <span class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18.8462L18.2308 11.9231L9 5.00004V18.8462Z" fill="#01222F" />
                         </svg>
                     </span>
-                    <p class="txt-botones oscurecer">Seguridad y confort como máxima</p>
+                    <span class="txt-botones oscurecer">Seguridad y confort como máxima</span>
                 </button>
                 <div class="dropdown-content f-alternative">
                     <p class="text oscurecer justify">
@@ -144,30 +144,30 @@
                 <div>
 
                 </div>
-            </article>
-            <article class="dropdown">
+            </div>
+            <div class="dropdown">
                 <button class="dropdown-btn normal">
                     <span class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18.8462L18.2308 11.9231L9 5.00004V18.8462Z" fill="#C8BA9B" />
                         </svg>
                     </span>
-                    <p class="txt-botones resaltar">Una única prioridad: el cliente</p>
+                    <span class="txt-botones resaltar">Una única prioridad: el cliente</span>
                 </button>
                 <div class="dropdown-content">
                     <p class="text resaltar justify">
                         <strong>Siempre serás nuestra razón de ser.</strong> Ofrecerte toda solución posible a tus problemas es nuestro
                         deber, porque el cliente no merece menos que la excelencia y tú eres nuestro cliente. </p>
                 </div>
-            </article>
-            <article class="dropdown">
+            </div>
+            <div class="dropdown">
                 <button class="dropdown-btn alternative">
                     <span class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18.8462L18.2308 11.9231L9 5.00004V18.8462Z" fill="#01222F" />
                         </svg>
                     </span>
-                    <p class="txt-botones oscurecer">La excelencia como servicio mínimo</p>
+                    <span class="txt-botones oscurecer">La excelencia como servicio mínimo</span>
                 </button>
                 <div class="dropdown-content f-alternative">
                     <p class="text justify oscurecer">
@@ -179,15 +179,15 @@
                         Para nosotros, <strong>Enclave fue, es y será sinónimo de excelencia, y nos esforzamos para ello.</strong>
                     </p>
                 </div>
-            </article>
-            <article class="dropdown">
+            </div>
+            <div class="dropdown">
                 <button class="dropdown-btn normal">
                     <span class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18.8462L18.2308 11.9231L9 5.00004V18.8462Z" fill="#C8BA9B" />
                         </svg>
                     </span>
-                    <p class="txt-botones resaltar">Siempre estar a la vanguardia</p>
+                    <span class="txt-botones resaltar">Siempre estar a la vanguardia</span>
                 </button>
                 <div class="dropdown-content">
                     <p class="text resaltar justify">
@@ -196,15 +196,15 @@
                         <strong>Con Enclave, siempre dispondrás de la tecnología más puntera y fiable</strong>
                     </p>
                 </div>
-            </article>
-            <article class="dropdown">
+            </div>
+            <div class="dropdown">
                 <button class="dropdown-btn alternative">
                     <span class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18.8462L18.2308 11.9231L9 5.00004V18.8462Z" fill="#01222F" />
                         </svg>
                     </span>
-                    <p class="txt-botones oscurecer">Cuidado al detalle</p>
+                    <span class="txt-botones oscurecer">Cuidado al detalle</span>
                 </button>
                 <div class="dropdown-content f-alternative">
                     <p class="text justify oscurecer">
@@ -217,18 +217,19 @@
                     </p>
 
                 </div>
-            </article>
+            </div>
         </section>
         <section id="agenciarCita">
             <h2 class="subtitles">Únete a un nuevo <span class="resaltar">estilo de vida.</span></h2>
-            <article>
+            <div>
                 <p class="text">
                     Disfruta de el control total de tu hogar en cualquier lugar, sitio o dispositivo, de forma
                     inmediata,
                     cómoda y sencilla.
                 </p>
-                <button class="normal txt-botones">Agencia una cita</button>
-            </article>
+                <button class="normal txt-botones" onclick="window.location.href = 'cita.html'">Agencia una
+                    cita</button>
+                </div>
         </section>
     </main>
     <footer>

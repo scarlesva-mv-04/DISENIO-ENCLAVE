@@ -50,14 +50,12 @@ body {
 .txt-footer {
     font-family: "Merriweather", serif;
     font-weight: 200;
-    font-style: light;
     color: white;
 }
 
 .txt-input {
     font-family: "Merriweather", serif;
     font-weight: 200;
-    font-style: light;
 }
 
 .resaltar {
@@ -155,7 +153,7 @@ section#description>h2 {
     width: 90%;
 }
 
-section#description>article {
+section#description>div {
     display: flex;
     flex-direction: column;
     text-align: justify;
@@ -251,7 +249,7 @@ section#agenciarCita>h2 {
     width: 75%;
 }
 
-section#agenciarCita>article {
+section#agenciarCita>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -667,6 +665,7 @@ main form {
     gap: 1rem;
     width: 90%;
     align-items: center;
+    max-width: 800px;
 }
 
 main form p input {
@@ -1195,7 +1194,7 @@ section#rely-on-us>h2 {
     font-size: 1.2rem;
 }
 
-section#rely-on-us article {
+section#rely-on-us div {
     flex-basis: 100%;
 }
 
@@ -1210,7 +1209,7 @@ button.dropdown-btn{
     border: none;
 }
 
-button.dropdown-btn p {
+button.dropdown-btn span:last-child {
     font-size: 1rem;
     margin: 0;
 }
