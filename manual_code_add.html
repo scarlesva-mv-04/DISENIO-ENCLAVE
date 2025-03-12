@@ -44,23 +44,24 @@
         <div class="code">
             <form id="add_home">
                 <p class="input-txt">
-                    <input class="txt-input" type="text" id="add_code" name="add_code"
-                        placeholder="1234-56789-1234-XXX"
+                    <input class="txt-input" type="text" id="add_code" name="add_code" placeholder="1234-56789-1234-XXX"
                         pattern="^\d{4}-\d{5}-\d{4}-[A-Za-z]{3}$" required>
                     <span>
                         <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.667 14.6667H23.3337V18.6667H27.3337V21.3333H23.3337V25.3333H20.667V21.3333H16.667V18.6667H20.667V14.6667ZM4.66699 22.6667V12H0.666992L14.0003 0L27.3337 12H20.667V9.58667L14.0003 3.58667L7.33366 9.58667V20H14.0003C14.0003 20.9333 14.1603 21.8267 14.4537 22.6667H4.66699Z" fill="#01222F"/>
-                        </svg>                            
+                            <path
+                                d="M20.667 14.6667H23.3337V18.6667H27.3337V21.3333H23.3337V25.3333H20.667V21.3333H16.667V18.6667H20.667V14.6667ZM4.66699 22.6667V12H0.666992L14.0003 0L27.3337 12H20.667V9.58667L14.0003 3.58667L7.33366 9.58667V20H14.0003C14.0003 20.9333 14.1603 21.8267 14.4537 22.6667H4.66699Z"
+                                fill="#01222F" />
+                        </svg>
                     </span>
                 </p>
                 <span class="resaltar text">Escane el código QR que se le proporcionó al finalizar la instalación de su
                     sistema ENCLAVE.</span>
+                <button id="registrar" class="txt-botones">Registrar</button>
+                <button id="manual" class="txt-botones" onclick="window.location.href='qr_code_add.html';">
+                    Introducir código QR
+                </button>
+            </form>
         </div>
-        <button id="registrar" class="txt-botones">Registrar</button>
-        </form>
-        <button id="manual" class="txt-botones" onclick="window.location.href='qr_code_add.html';">
-            Introducir código QR
-        </button>
     </main>
 </body>
 

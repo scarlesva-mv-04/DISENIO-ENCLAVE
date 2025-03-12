@@ -96,6 +96,7 @@ header.default {
     height: 6.938rem;
     position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
 header.default>* {
@@ -104,6 +105,7 @@ header.default>* {
 }
 
 header.default>.menu,
+header.default>.back,
 header.default>.user {
     margin-top: 3rem;
     padding: 0;
@@ -160,19 +162,81 @@ section#description>article {
 }
 
 /*TESTIMONIALS MAIN*/
-section#testimonials {
+section#testimonials{
     display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
+    flex-flow:column;
+    gap:1rem;
+    width: 90%;
 }
 
-section#testimonials>h2 {
+.swiper{
+    width: 100%;
+    height: 200px;
     display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    font-size: 25px;
+    flex-flow:column ;
 }
+
+.swiper-slide>div{
+    display: flex;
+    background-color: #01222F;
+    flex-basis: 100%;
+}
+
+/* CSS */
+.testimonial-container {
+    position: relative;
+    color: #fff; 
+    padding: 2rem;          /* Espacio interno adaptable */
+    border-radius: 0.5rem;  /* Curvatura opcional de esquinas */
+    overflow: hidden;       /* Para asegurar que nada se salga del contenedor */
+  }
+  
+  /* Oscurece un poco la imagen de fondo para que el texto sea más legible */
+/* CSS */
+.testimonial-container {
+    border-radius: 15px; /* Opcional, para esquinas redondeadas */
+  }
+  
+  /* Contenedor interno para el contenido */
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+  }
+  
+  /* Encabezado con foto + texto */
+  .testimonial-header {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .testimonial-photo {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%; /* Para que la foto sea circular */
+  }
+  
+  .testimonial-author {
+/*responsive*/
+  }
+  
+  /* Cita */
+  .testimonial-quote {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0; /* Quita el margen por defecto de blockquote */
+  }
+  
+  
+
+.swiper-scrollbar-drag {
+    background: #C8BA9B !important;
+}
+
 
 /*AGENCIAR CITA*/
 section#agenciarCita {
@@ -386,18 +450,12 @@ div#contenedor-menu.active {
     pointer-events: auto;
 }
 
-header.menu {
-    padding-top: 4rem;
-    padding-left: 1rem;
-    padding-right: 0.8rem;
-}
-
 div#separador {
     flex-basis: 0.2rem;
     background-color: #C8BA9B;
 }
 
-main.menu nav {
+div.menu nav {
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -422,16 +480,6 @@ header.menu {
 div#separador {
     flex-basis: 0.2rem;
     background-color: #C8BA9B;
-}
-
-main.menu nav {
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-    height: 100%;
-    margin-left: 1rem;
-    padding-top: 4rem;
-    font-size: 28px;
 }
 
 /* Cuando el menú está abierto, deshabilitamos el scroll en el body */
@@ -551,7 +599,7 @@ main form p.error span svg {
     color: #AE1916;
 }
 
-/*---------------- LOG IN SUSCESSFUL // // // // ----------------*/
+/*---------------- LOG IN SUSCESSFUL  ----------------*/
 
 main.login-success div:nth-child(3) {
     display: flex;
@@ -585,7 +633,17 @@ main.login-success * p:nth-child(3) {
 
 /*---------------- SUCCESS ----------------*/
 
-main.success div:nth-child(3) {
+main.success {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow:column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main.success div:nth-child(2) {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -600,7 +658,8 @@ main.success * p:nth-child(2) {
 
 main.success * p:nth-child(3) {
     font-size: 0.875rem;
-    margin-top: 0.8rem;
+    text-align: center;
+    width: 80%;
 }
 
 /*---------------- PROPERTIES / LISTADO DE PROPIEDADES ----------------*/
@@ -659,7 +718,7 @@ main.properties div.header-dummy {
 }
 
 /*LISTADO DE PROPIEDADES*/
-section#property-list {
+div#property-list {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -668,7 +727,7 @@ section#property-list {
 }
 
 /*TARJETA DE PROPIEDAD*/
-.tarjeta-propiedad {
+.tarjeta-propiedad  {
     width: 100%;
     height: 14rem;
     border-radius: 15px;
@@ -680,32 +739,39 @@ section#property-list {
 
 .imagen-property {
     flex-basis: 100%;
-    background-image: url('../images/photos/main_cover_image.webp');
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../images/photos/main_cover_image.webp');
     background-size: cover;
     background-position: center;
     display: flex;
 }
 
 .fondo-2 {
-    background-image: url('../images/photos/jeff_opinion.webp');
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../images/photos/jeff_opinion.webp');
     background-size: cover;
     background-position: center;
 }
 
 .fondo-3 {
-    background-image: url('../images/photos/jessica_opinion.webp');
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../images/photos/jessica_opinion.webp');
     background-size: cover;
     background-position: center;
 }
 
 .fondo-4 {
-    background-image: url('../images/photos/HOME_EXAMPLE.webp');
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../images/photos/HOME_EXAMPLE.webp');
     background-size: cover;
     background-position: center;
 }
 
 div.imagen-property>div {
-    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     flex-flow: column;
     flex-basis: 100%;
@@ -1063,4 +1129,183 @@ section#our-history>div>span{
     padding: 1.4rem;
     height: 10%;
     margin-top: -4.5rem;
+}
+
+/*---------------- CITA ----------------*/
+
+
+.calendar {
+    width: 100%; /* Ajusta según sea necesario */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.3rem;
+    background-color: #01222F;
+    margin-bottom: 0.8rem;
+}
+
+/* Encabezado del calendario */
+.calendar-header {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-title {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+/* Flechas de navegación */
+.prev-arrow, .next-arrow {
+    cursor: pointer;
+    user-select: none;
+    font-size: 2rem;
+}
+
+/* Días de la semana */
+.calendar-weekdays {
+    width: 100%;
+    max-width: 37.5rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 5px;
+    color: #C8BA9B;
+}
+
+.selected{
+    background: #C8BA9B; /* #C8BA9B con 50% de opacidad */
+    color: #01222F;
+    font-weight: bold;
+}
+
+/* Contenedor de los días del mes */
+.calendar-days {
+    max-width: 37.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    color: #D9D9D9;
+}
+
+/* Clase para destacar el día 15 */
+
+/* Clase para los días fuera del mes (opacidad) */
+.day-non-elegible {
+    opacity: 0.5;
+}
+
+.day-non-elegible {
+    opacity: 0.5;
+}
+
+section#cita{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 60rem;
+}
+
+section#cita>h2{
+    margin-bottom:1rem;
+}
+
+main section form p.error input::placeholder {
+    color: #AE1916;
+}
+
+main section form p.error span svg {
+    color: #AE1916;
+}
+/*---------------- PROPERTY ----------------*/
+
+/*cover propiedad*/
+div.cover-property{
+    width: 100%;
+    display: flex;
+}
+
+div.cover-property>div.content {
+    background-color: rgba(0, 0, 0, .7);
+    height: 24.25rem;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    text-align: start;
+}
+
+div.cover-property>div.content>p {
+    color: white;
+    font-size: 25px;
+    padding-left: 0.8rem;
+}
+/*estado propiedad*/
+section#status{
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    gap: 1rem;
+}
+section#status>div{
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+section#status>div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1.563rem;
+    width: 100%;
+}
+
+section#status>div>div{
+    background-color: rgba(21, 21, 21, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1.563rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Contenedor de la primera línea (icono + texto) */
+.home-status > div, .camera-status>div {
+    display: flex;
+    flex-wrap: wrap;
+    width:90%;
+    align-items: center;
+    justify-content: center;  /* Centrar verticalmente */
+    color: #31812E;
+}
+
+/* Icono de verificación */
+.home-status div span:nth-child(1) {
+    flex-basis: 10%;
+    height: 1.5rem;
+    background-image: url("../images/icons/suscesfully.svg");
+    background-repeat: no-repeat;
+}
+
+.camera-status div span:nth-child(1) {
+    flex-basis: 10%;
+    height: 1.5rem;
+    background-image: url("../images/icons/camera_on.svg");
+    background-repeat: no-repeat;
+}
+
+/* Estilo del texto de descripción */
+.home-status .text,.camera-status .text {
+    text-align: center;
 }

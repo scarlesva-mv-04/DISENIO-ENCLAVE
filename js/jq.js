@@ -1,11 +1,10 @@
-
 /* -  CONTROL DE ERRORES LOGIN - */
 $(document).ready(function(){
     $("#user-login, #password-login").on("input", function() {
         // Cuando el usuario empieza a escribir, restauramos el color del SVG
-        if ($(this).attr("id") === "user-login") {
+        if ($(this).attr("id") == "user-login") {
             $("#user span svg path").css("fill", "#01222F");
-        } else if ($(this).attr("id") === "password-login") {
+        } else if ($(this).attr("id") == "password-login") {
             $("#clave span svg path").css("fill", "#01222F");
         }
     });
@@ -16,7 +15,7 @@ $(document).ready(function(){
 
         // Validación de CLAVEID
         let claveid = $("#user-login").val().trim();
-        if (claveid === "") {
+        if (claveid == "") {
             $("#user").addClass("error");
 
             // Animación de transición en el placeholder con fadeIn
@@ -47,7 +46,7 @@ $(document).ready(function(){
 
             // Animación de transición en el placeholder con fadeIn
             $("#password-login").val("").attr("placeholder", "").fadeOut(100, function() {
-                $(this).attr("placeholder", "La contraseña no es correcta").fadeIn(300);
+                $(this).attr("placeholder", "Mínimo 4 carácteres").fadeIn(300);
             });
 
             // Animar cambio de color del SVG a rojo
@@ -188,7 +187,88 @@ $(document).ready(function() {
   });
   
   
-  
+  /*VALIDACIÓN FORMULARIO CITA*/
+  $(document).ready(function(){
+    $("#name, #surname, #dni, #contact").on("input", function() {
+        let parent = $(this).closest("p.input-txt");
+        // Restauramos el color del span y quitamos la clase error al p contenedor
+        parent.removeClass("error");
+        parent.find("span").css("transition", "color 0.3s ease").css("color", "#01222F");
+    });
+
+    $("#citaForm").submit(function(e){
+        e.preventDefault(); // Evita el envío del formulario
+        let isValid = true;
+
+        // Validación de Nombre
+        let name = $("#name");
+        let nameParent = name.closest("p.input-txt");
+        if (name.val().trim() === "") {
+            nameParent.addClass("error");
+
+            name.val("").attr("placeholder", "").fadeOut(100, function() {
+                $(this).attr("placeholder", "Este campo es obligatorio").fadeIn(300);
+            });
+
+            nameParent.find("span").css("transition", "color 0.3s ease").css("color", "#AE1916");
+            isValid = false;
+        }
+
+        // Validación de Apellidos
+        let surname = $("#surname");
+        let surnameParent = surname.closest("p.input-txt");
+        if (surname.val().trim() === "") {
+            surnameParent.addClass("error");
+
+            surname.val("").attr("placeholder", "").fadeOut(100, function() {
+                $(this).attr("placeholder", "Este campo es obligatorio").fadeIn(300);
+            });
+
+            surnameParent.find("span").css("transition", "color 0.3s ease").css("color", "#AE1916");
+            isValid = false;
+        }
+
+        // Validación de DNI/NIE
+        let dni = $("#dni");
+        let dniParent = dni.closest("p.input-txt");
+        let dniPattern = /^[XYZ]?\d{7,8}[A-Z]$/; // Formato básico de DNI/NIE
+        if (!dniPattern.test(dni.val().trim())) {
+            dniParent.addClass("error");
+
+            dni.val("").attr("placeholder", "").fadeOut(100, function() {
+                $(this).attr("placeholder", "DNI/NIE no válido").fadeIn(300);
+            });
+
+            dniParent.find("span").css("transition", "color 0.3s ease").css("color", "#AE1916");
+            isValid = false;
+        }
+
+        // Validación de Contacto (Email o Teléfono)
+        let contact = $("#contact");
+        let contactParent = contact.closest("p.input-txt");
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Email válido
+        let phonePattern = /^\d{9,}$/; // Al menos 9 dígitos para teléfono
+        if (!emailPattern.test(contact.val().trim()) && !phonePattern.test(contact.val().trim())) {
+            contactParent.addClass("error");
+
+            contact.val("").attr("placeholder", "").fadeOut(100, function() {
+                $(this).attr("placeholder", "Ingrese un email o teléfono válido").fadeIn(300);
+            });
+
+            contactParent.find("span").css("transition", "color 0.3s ease").css("color", "#AE1916");
+            isValid = false;
+        }
+
+        // Si todo es válido, redirigir o enviar el formulario
+        if (isValid) {
+            window.location.href = "cita_successful.html";
+        }
+    });
+});
+
+
+
+
   
   
   
