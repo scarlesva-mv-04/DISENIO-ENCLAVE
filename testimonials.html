@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
     <script src="swiper/swiper-bundle.min.js"></script>
     <script src="js/jq.js"></script>
-    <title>ENCLAVE</title>
+    <title>ENCLAVE - Testimonials</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
             </a>
         </span>
     </header>
-    <main>
+    <main class="testimonials">
         <div id="contenedor-menu" class="menu-lateral">
             <header class="menu">
                 <span class="menu-menu">
@@ -73,32 +73,11 @@
         <div class="header-dummy"></div>
         <div class="cover">
             <div class="content">
-                <p class="subtitles">Descubre la comodidad, el confort y la seguridad que brinda nuestra domótica
-                    inteligente</p>
+                <p class="subtitles"> Solo Enclave puede lograr el equilibrio perfecto entre confort y seguridad.</p>
             </div>
         </div>
-        <section id="description">
-            <h2 class="subtitles">Tu hogar, <span class="resaltar">más inteligente, más cómodo, más especial</span></h2>
-            <article>
-                <p class="text">
-                    Disfruta de el control total de tu hogar en cualquier lugar, sitio o dispositivo, de forma
-                    inmediata,
-                    cómoda y sencilla.
-                </p>
-                <p class="text">
-                    Con la domótica inteligente de Enclave podrás controlar y ajustar a tus necesidades hasta el más
-                    mínimo
-                    detalle de tu casa, desde controlar el acceso remoto de invitados hasta ajustar la temperatura del
-                    agua
-                    para cada grifo de casa, todo disponible desde la palma de tu mano.<br>
-                </p>
-                <p class="text">
-                    Con Enclave, <span class="resaltar">el único límite, lo pones tú.</span>
-                </p>
-            </article>
-        </section>
         <section id="testimonials">
-            <h2 class="subtitles">Lo que dicen nuestros clientes</h2>
+            <h2 class="subtitles">Las opiniones de nuestros clientes <span class="resaltar">nos respaldan</span></h2>
             <!-- Slider main container -->
             <div class="swiper testimonials_opinion">
                 <!-- Additional required wrapper -->
@@ -149,10 +128,9 @@
                 </div>
                 <div class="swiper-scrollbar"></div>
             </div>
-
         </section>
         <script>
-            const swiper = new Swiper('.swiper', {
+            const testimonials_opinion = new Swiper('.swiper', {
                 // Optional parameters
                 direction: 'horizontal',
 
@@ -172,7 +150,83 @@
                         slidesPerView: 3,
                         spaceBetween:20
                     }
+                }
+            });
+        </script>
+        <section id="testionials-security">
+            <h2 class="subtitles">Tu seguridad siempre será <span class="resaltar">nuestra prioridad</span></h2>
+            <div class="swiper testimonials_opinion">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-container fondo-4">
+                            <div class="testimonial-content">
+                                <div class="testimonial-header">
+                                    <img src="images/photos/User_pic.webp" alt="Foto de Adeline"
+                                        class="testimonial-photo">
+                                    <span class="testimonial-author subtitles">Adeline ha dicho:</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    “Estar en casa jamás había sido tan cómodo”
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-container fondo-2">
+                            <div class="testimonial-content">
+                                <div class="testimonial-header">
+                                    <img src="images/photos/jeff.webp" alt="Foto de Jeff"
+                                        class="testimonial-photo">
+                                    <span class="testimonial-author">Jeff ha dicho:</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    “Enclave simplemente esta a otro nivel”
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-container fondo-3">
+                            <div class="testimonial-content">
+                                <div class="testimonial-header">
+                                    <img src="images/photos/jessica.webp" alt="Foto de Jessica"
+                                        class="testimonial-photo">
+                                    <span class="testimonial-author">Jessica ha dicho:</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    “Estar en casa jamás había sido tan cómodo”
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+        <script>
+            const testimonials_security = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
                 },
+                breakpoints: {
+                    0: {   // Para pantallas menores a 768px
+                        slidesPerView: 1
+                    },
+                    768: { // Para pantallas de 768px hasta 1023px
+                        slidesPerView: 2,
+                        spaceBetween:10
+                    },
+                    1024: { // Para pantallas de 1024px en adelante
+                        slidesPerView: 3,
+                        spaceBetween:20
+                    }
+                }
             });
         </script>
         <section id="agenciarCita">
@@ -183,7 +237,8 @@
                     inmediata,
                     cómoda y sencilla.
                 </p>
-                <button class="normal txt-botones" onclick="window.location.href = 'cita.html'">Agencia una cita</button>
+                <button class="normal txt-botones" onclick="window.location.href = 'cita.html'">Agencia una
+                    cita</button>
             </article>
         </section>
     </main>
